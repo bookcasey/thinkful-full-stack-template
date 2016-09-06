@@ -13,7 +13,7 @@
     "build": "run-s build:*",
     "clean": "rm -rf build",
     "serve": "npm start",
-    "watch": "run-s watch:*",
+    "watch": "run-s clean:client mkdir:client watch:*",
     "heroku-postbuild": "npm run build",
     "clean:server": "rm -rf build/server",
     "mkdir:server": "mkdir -p build/server",
