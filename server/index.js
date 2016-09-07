@@ -10,6 +10,10 @@ let app = express();
 
 app.use(express.static(process.env.CLIENT_PATH));
 
+app.get('/api/hello', function(request, response) {
+    response.json({message: 'Hello from express!'});
+});
+
 function runServer() {
     return new Promise((resolve, reject) => {
         app.listen(PORT, HOST, (err) => {
