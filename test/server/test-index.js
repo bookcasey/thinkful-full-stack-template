@@ -7,7 +7,7 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
-describe('Hello world', () => {
+describe('Hello world', function() {
   before(function() {
     return runServer();
   });
@@ -16,7 +16,7 @@ describe('Hello world', () => {
     return closeServer();
   });
 
-  it('should get hello world', () => {
+  it('should get hello world', function() {
     return chai.request(app)
       .get('/helloworld')
       .then(function(res) {
