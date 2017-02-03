@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 
 import { Message } from './../../server/models';
 
-describe('Hello world', function() {
+describe('Message', function() {
   before(function() {
     return runServer(() => {
       Message.create({text: 'Hello from mongoose in before()'});
@@ -25,7 +25,7 @@ describe('Hello world', function() {
     return closeServer();
   });
 
-  it('should get hello world', function() {
+  it('should GET a message', function() {
     return chai.request(app)
       .get('/helloworld')
       .then(function(res) {
