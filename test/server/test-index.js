@@ -7,12 +7,21 @@ const should = chai.should();
 
 chai.use(chaiHttp);
 
+import mongoose from 'mongoose';
+mongoose.Promise = global.Promise;
+
+import { Message } from './../../server/models';
+
 describe('Hello world', function() {
   before(function() {
-    return runServer();
+    return runServer(() => {
+      Message.create({text: 'Hello from mongoose in before()'});
+    });
   });
 
   after(function() {
+    Message.remove({}, () => {});
+
     return closeServer();
   });
 
@@ -22,7 +31,7 @@ describe('Hello world', function() {
       .then(function(res) {
         res.should.have.status(200);
         res.should.be.json;
-        res.body.message.should.equal('hello world')
+        res.body.text.should.equal('Hello from mongoose in before()')
         });
       });
 })
