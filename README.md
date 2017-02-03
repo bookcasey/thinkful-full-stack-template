@@ -10,6 +10,8 @@ A template for developing and deploying full stack JavaScript apps.  Supports ES
 * Clone this repository: `git clone https://github.com/oampo/thinkful-full-stack-template YOUR_PROJECT_NAME`
 * Move into the project directory: `cd YOUR_PROJECT_NAME`
 * Install the dependencies: `npm install`
+* Add a `.env` to the root with your Mlab information:
+  * `DATABASE_URL = mongodb://username:password@linktoyour.mlab.com`
 * Create a new repo on GitHub: https://github.com/new
     * Make sure the "Initialize this repository with a README" option is left **un**checked
 * Update the remote to point to your GitHub repository: `git remote set-url origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME`
@@ -71,4 +73,3 @@ Requires the [Travis CLI client](https://github.com/travis-ci/travis.rb).
 ### Deploying using CD
 
 * Push your code to GitHub: `git push origin master`
-
